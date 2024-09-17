@@ -1,0 +1,30 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.barra {
+    min-height: 70px;
+    background-image: url(../img/header_logo.jpg);
+    background-repeat: no-repeat;
+    background-size: 300px, 200px, cover, cover;
+    background-position: left,center;
+    background-color: #cd1f32;
+    &__contenido {
+        @include m.contenedor;
+        display: flex;
+        flex-direction: column;
+
+        @include m.desktop {
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+        }
+    }
+
+    &__logo {
+        @include m.logo;
+        @include m.texto-fluido(1rem, 3rem);
+        width: 100%; /* Ajusta el ancho de la imagen al 100% del contenedor */
+        height: auto; /* Mantén la proporción original de la imagen */
+        max-width: 400px;
+    }
+}
