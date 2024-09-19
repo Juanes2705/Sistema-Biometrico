@@ -8,6 +8,9 @@ use MVC\Router;
 
 class VigilantesController {
 
+    
+
+
     public static function index(Router $router){
         if(!is_admin()){
             header('Locacion: /login');

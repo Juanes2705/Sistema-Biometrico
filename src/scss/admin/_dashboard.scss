@@ -107,7 +107,7 @@
     }
     
     &__boton {
-        @include m.boton(v.$azul, v.$blanco);
+        @include m.boton(v.$red-campus, v.$blanco);
         text-align: center;
         text-transform: uppercase;
         font-size: 1.4rem;
@@ -139,12 +139,34 @@
     }
 
     &__contenedor-boton {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 2rem; // Añadir espacio entre los botones y el input
+        margin-bottom: 5rem;
+        
         @include m.tablet {
-            display: flex;
-            flex-direction: row;
             justify-content: space-between;
-            align-items: center;
-             margin-bottom: 5rem
+        }
+    }
+
+    &__filter-input {
+        padding: 0.5rem 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+        transition: all 0.3s ease-in-out;
+        margin-right: 40rem; // Ajusta el margen si es necesario para la separación
+
+        &:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+        }
+
+        &::placeholder {
+            color: #aaa;
         }
     }
 

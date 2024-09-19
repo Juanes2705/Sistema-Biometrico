@@ -15,7 +15,7 @@
     <form method="POST" class="formulario">
         <?php include_once __DIR__ . './../formularioVigilante.php'; ?>
 
-        <input class="formulario__submit formulario__submit--registrar" type="submit" value="Actualizar Profesor">
+        <input class="formulario__submit formulario__submit--registrar" type="submit" value="Actualizar Vigilante">
     </form>
 
 </div>

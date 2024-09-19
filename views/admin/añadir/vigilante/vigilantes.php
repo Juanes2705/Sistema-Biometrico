@@ -5,10 +5,16 @@
         <i class="fa-solid fa-circle-plus"></i>
             Añadir Vigilante
     </a>
+
+    <input type="text" id="filter-input" class="dashboard__filter-input" placeholder="Filtrar vigilante";">
+
     <a class="dashboard__boton-mate" href="/admin/añadir">
         <i class="fa-solid fa-circle-arrow-left"></i>
             Volver
     </a>
+
+    
+
 </div>
 <div class="dashboard__contenedor">
     <?php if (!empty($vigilante)) { ?>
@@ -35,7 +41,7 @@
                         <?php echo htmlspecialchars($vigilantes->tags, ENT_QUOTES, 'UTF-8'); ?>
                     </td>
                     <td class="table__td--acciones">
-                        <a class="table__accion table__accion--editar" href="/admin/añadir/vigilantes/editar?id=<?php echo htmlspecialchars($vigilantes->id, ENT_QUOTES, 'UTF-8'); ?>">
+                        <a class="table__accion table__accion--editar" href="/admin/añadir/vigilante/editar?id=<?php echo htmlspecialchars($vigilantes->id, ENT_QUOTES, 'UTF-8'); ?>">
                             <i class="fa-solid fa-user-pen"></i>
                             Editar
                         </a>
@@ -55,6 +61,12 @@
     <?php } else { ?>
         <p class="text-center">No hay Vigilantes</p>
     <?php } ?>
+
+    <a class="dashboard__boton-mate" href="/admin/vigilantes/exportar" target="_blank">
+        <i class="fa-solid fa-file-excel"></i>
+        Exportar Excel
+    </a>
+
 </div>
 
 <?php
