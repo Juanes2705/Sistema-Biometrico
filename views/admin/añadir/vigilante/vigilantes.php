@@ -62,12 +62,13 @@
         <p class="text-center">No hay Vigilantes</p>
     <?php } ?>
 
-    <a class="dashboard__boton-mate" href="/admin/vigilantes/exportar" target="_blank">
-        <i class="fa-solid fa-file-excel"></i>
-        Exportar Excel
-    </a>
 
 </div>
+
+<a class="dashboard__boton-mate" href="/admin/vigilantes/exportar">
+        <i class="fa-solid fa-file-excel"></i>
+        Exportar a Excel
+    </a>
 
 <?php
     echo $paginacion;

@@ -1,0 +1,110 @@
+@use 'base/variables' as v;
+
+input {
+  &.number-input {
+    width: 100%;
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+    padding: 0 20px;
+    border-radius: 10px;
+    border: 0;
+    box-shadow: v.$box-shadow;
+  }
+}
+
+.wrapper {
+  width: 100%;
+  
+
+  .phone {
+    width: 350px;
+    margin: 40px auto 0 auto;
+    position: relative;
+
+    span.title {
+      font-weight: 700;
+      letter-spacing: 2px;
+      display: block;
+      text-align: center;
+    }
+
+    .phone-container {
+      width: 100%;
+      margin-top: 30px;
+
+      .keyboard {
+        width: 90%;
+        margin-left: 5%;
+        margin-top: 40px;
+
+        .number {
+          width: 100%;
+          font-size: 0;
+          text-align: center;
+
+          &.aling-right {
+            text-align: right;
+            width: 100%;
+          }
+
+          span {
+            font-size: 24px;
+            color: v.$main-color;
+            display: inline-block;
+            width: 33%;
+            text-align: center;
+            margin-bottom: 25px;
+
+            i {
+              display: inline-block;
+              width: v.$button-size;
+              height: v.$button-size;
+              line-height: v.$button-size;
+              background: white;
+              cursor: pointer;
+              border-radius: 100%;
+              transition: 250ms;
+              user-select: none;
+              box-shadow: 8px 8px 24px 0px rgba(132,132,132,0.09);
+
+              &.delete {
+                background: transparent;
+                box-shadow: 0 0 0 0;
+                color: v.$main-color;
+              }
+            }
+
+            &:hover i {
+              color: black;
+            }
+
+            &:active i {
+              transform: translateY(1px);
+              box-shadow: v.$hover-shadow;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+#verifyButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#verifyButton:hover {
+  background-color: #218838;
+}
+
+#resultMessage {
+  margin-top: 15px;
+  font-size: 16px;
+  color: #333;
+}

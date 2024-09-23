@@ -104,4 +104,6 @@ class Vigilantes extends ActiveRecord{
         $this->token = uniqid();
     }
 
+    
+
 }

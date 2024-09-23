@@ -1,0 +1,87 @@
+input.number-input {
+  width: 100%;
+  height: 55px;
+  line-height: 55px;
+  text-align: center;
+  padding: 0 20px;
+  border-radius: 10px;
+  border: 0;
+  box-shadow: 0px 0px 17px -1px rgba(132, 132, 132, 0.15);
+}
+
+.wrapper {
+  width: 100%;
+}
+
+.phone {
+  width: 350px;
+  margin: 40px auto 0 auto;
+  position: relative;
+}
+
+span.title {
+  font-weight: 700;
+  letter-spacing: 2px;
+  display: block;
+  text-align: center;
+}
+
+.phone-container {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.keyboard {
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 40px;
+}
+
+.number {
+  width: 100%;
+  font-size: 0;
+  text-align: center;
+}
+
+.number.aling-right {
+  text-align: right;
+  width: 100%;
+}
+
+.number span {
+  font-size: 24px;
+  color: #E4BF88;
+  display: inline-block;
+  width: 33%;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.number span i {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  background: white;
+  cursor: pointer;
+  border-radius: 100%;
+  transition: 250ms;
+  user-select: none;
+  box-shadow: 8px 8px 24px 0px rgba(132, 132, 132, 0.09);
+}
+
+.number span i.delete {
+  background: transparent;
+  box-shadow: 0 0 0 0;
+  color: #E4BF88;
+}
+
+.number span:hover i {
+  color: black;
+}
+
+.number span:active i {
+  transform: translateY(1px);
+  box-shadow: 5px 5px 16px 0px rgba(132, 132, 132, 0.18);
+}
+/*# sourceMappingURL=keypad.css.map */

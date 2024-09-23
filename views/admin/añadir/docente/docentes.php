@@ -5,6 +5,9 @@
         <i class="fa-solid fa-circle-plus"></i>
             Añadir Profesor
     </a>
+
+    <input type="text" id="filterP-input" class="dashboard__filter-input" placeholder="Filtrar Profesor";">
+
     <a class="dashboard__boton-mate" href="/admin/añadir">
         <i class="fa-solid fa-circle-arrow-left"></i>
             Volver
@@ -56,6 +59,11 @@
         <p class="text-center">No hay Profesores</p>
     <?php } ?>
 </div>
+
+<a class="dashboard__boton-mate" href="/admin/docente/exportar">
+        <i class="fa-solid fa-file-excel"></i>
+        Exportar a Excel
+    </a>
 
 <?php
     echo $paginacion;

@@ -2,6 +2,9 @@
 
 namespace Controllers;
 
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+
 use Classes\Paginacion;
 use Model\Profesores;
 use MVC\Router;
@@ -163,6 +166,39 @@ class ProfesoresController {
                 exit;
             }
         }
+    }
+
+    public static function exportarExcel() {
+        // Obtener los datos de los vigilantes
+        $profesor = Profesores::all(); // O la consulta que estés utilizando para obtener los vigilantes
+
+        // Crear una nueva hoja de cálculo
+        $spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+        
+        // Escribir los encabezados
+        $sheet->setCellValue('A1', 'Nombre');
+        $sheet->setCellValue('B1', 'Correo');
+        $sheet->setCellValue('C1', 'Materias');
+
+        // Rellenar los datos de los vigilantes
+        $fila = 2; // Empezar en la segunda fila, debajo de los encabezados
+        foreach ($profesor as $profesores) {
+            $sheet->setCellValue("A{$fila}", $profesores->nombre . ' ' . $profesores->apellido);
+            $sheet->setCellValue("B{$fila}", $profesores->email);
+            $sheet->setCellValue("C{$fila}", $profesores->tags);
+            $fila++;
+        }
+
+        // Crear el archivo Excel
+        $writer = new Xlsx($spreadsheet);
+        
+        // Enviar el archivo como respuesta
+        header('Content-Type: application/vnd.ms-excel');
+        header('Content-Disposition: attachment;filename="profesores.xlsx"');
+        header('Cache-Control: max-age=0');
+        $writer->save('php://output');
+        exit;
     }
 
     

@@ -14,6 +14,7 @@ use Controllers\EventosController;
 use Controllers\EventosEstuController;
 use Controllers\EventosProfeController;
 use Controllers\GradosController;
+use Controllers\HuellasController;
 use Controllers\ProfedashboardController;
 use Controllers\ProfesoresController;
 use Controllers\TareasController;
@@ -56,6 +57,7 @@ $router->get('/admin/añadir/docente/editar', [ProfesoresController::class, 'edi
 $router->post('/admin/añadir/docente/editar', [ProfesoresController::class, 'editarMatematicas']);
 $router->post('/admin/añadir/docente/eliminar', [ProfesoresController::class, 'desactivarMatematicas']);
 $router->get('/admin/añadir/docente/docentes', [ProfesoresController::class, 'matematicas']);
+$router->get('/admin/docente/exportar', [VigilantesController::class, 'exportarExcel']);
 
 $router->get('/admin/añadir/sociales/crear', [ProfesoresController::class, 'crearSociales']);
 $router->post('/admin/añadir/sociales/crear', [ProfesoresController::class, 'crearSociales']);
@@ -77,6 +79,8 @@ $router->get('/admin/añadir/vigilante/editar', [VigilantesController::class, 'e
 $router->post('/admin/añadir/vigilante/editar', [VigilantesController::class, 'editarVigilantes']);
 $router->post('/admin/añadir/vigilante/eliminar', [VigilantesController::class, 'desactivarVigilantes']);
 $router->get('/admin/añadir/vigilante/vigilantes', [VigilantesController::class, 'vigilantes']);
+$router->get('/admin/vigilantes/exportar', [VigilantesController::class, 'exportarExcel']);
+
 
 $router->get('/admin/añadir/ingles/crear', [ProfesoresController::class, 'crearIngles']);
 $router->post('/admin/añadir/ingles/crear', [ProfesoresController::class, 'crearIngles']);
@@ -92,7 +96,13 @@ $router->post('/admin/añadir/informatica/editar', [ProfesoresController::class,
 $router->post('/admin/añadir/informatica/eliminar', [ProfesoresController::class, 'desactivarInformatica']);
 $router->get('/admin/añadir/informatica/informatica', [ProfesoresController::class, 'informatica']);
 
-$router->get('/admin/eventos', [EventosController::class, 'index']);
+$router->get('/admin/huella', [HuellasController::class, 'index']);
+$router->get('/admin/huella/keypad/index', [HuellasController::class, 'indexH']);
+$router->get('/admin/huella/dinamica/index', [HuellasController::class, 'indexD']);
+$router->post('/admin/huella/dinamica/index', [HuellasController::class, 'indexD']);
+$router->get('/admin/huella/dinamica/verificar_clave', [HuellasController::class, 'indexV']);
+$router->post('/admin/huella/dinamica/verificar_clave', [HuellasController::class, 'indexV']);
+
 
 $router->get('/admin/grados', [GradosController::class, 'index']);
 $router->get('/admin/grados/Noveno/crear', [GradosController::class, 'crearNoveno']);

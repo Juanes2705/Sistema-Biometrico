@@ -12,7 +12,7 @@
                 Añadir
             </span>
         </a>
-        <a href="/admin/eventos" class="dashboard__enlace <?php echo pagina_actual('/eventos') ? 'dashboard__enlace--actual' : '' ; ?>">
+        <a href="/admin/huella" class="dashboard__enlace <?php echo pagina_actual('/huella') ? 'dashboard__enlace--actual' : '' ; ?>">
             <i class="fa-solid fa-fingerprint"></i>
             <span class="dashboard__menu-texto">
                 Huella
