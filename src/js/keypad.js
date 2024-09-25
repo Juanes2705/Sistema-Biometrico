@@ -33,21 +33,34 @@ $(".number-input").keyup(function(e){
 
   $(document).ready(function () {
     $("#verifyButton").on('click', function () {
+      console.log("Verificar botón fue clickeado"); // Añade esto para comprobar si el evento se dispara
       var claveIngresada = $("#numberInput").val();
-      console.log("Clave ingresada:", claveIngresada);
-
+  
+      if (claveIngresada.length !== 6) {
+          $("#resultMessage").html(`<div class="error-message">Por favor, ingresa una clave de 6 dígitos.</div>`);
+          return;
+      }
+  
       $.ajax({
           type: "POST",
           url: "http://localhost:3000/admin/huella/dinamica/verificar_clave",
           data: { clave: claveIngresada },
           success: function (response) {
-              $("#resultMessage").html(`<div class="success-message">${response}</div>`);
-          },
+            if (response.includes("Acceso concedido")) {
+                // Redirigir con un parámetro en la URL indicando éxito
+                window.location.href = "http://localhost:3000/admin/huella/dinamica/verificar_clave?mensaje=acceso_concedido";
+            } else if (response.includes("Acceso denegado")) {
+                // Redirigir con un parámetro en la URL indicando error
+                window.location.href = "http://localhost:3000/admin/huella/dinamica/verificar_clave?mensaje=acceso_denegado";
+            } else {
+                $("#resultMessage").html(`<div class="error-message">${response}</div>`);
+            }
+        },
           error: function () {
               $("#resultMessage").html(`<div class="error-message">Error en la verificación.</div>`);
           }
       });
-  });
+  });  
 });
 
 

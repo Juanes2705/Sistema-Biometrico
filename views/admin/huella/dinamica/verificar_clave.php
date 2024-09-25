@@ -3,6 +3,15 @@
 <?php
 // verificar_clave.php
 
+// Verificar si hay un mensaje en la URL (ej: acceso concedido o acceso denegado)
+if (isset($_GET['mensaje'])) {
+    if ($_GET['mensaje'] === 'acceso_concedido') {
+        echo "<div class='success-message'>Acceso concedido. Bienvenido.</div>";
+    } elseif ($_GET['mensaje'] === 'acceso_denegado') {
+        echo "<div class='error-message'>Acceso denegado. Clave incorrecta.</div>";
+    }
+}
+
 // Depuración: Verificar si se ha enviado una clave
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Verificar si la clave fue enviada

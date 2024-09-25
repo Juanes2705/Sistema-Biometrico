@@ -15,5 +15,12 @@
                     Clave Dinamica
             </a>
         </div>
+
+        <div class="dashboard__contenedor--boton">
+            <a class="dashboard__boton" href="/admin/huella/dinamica/index">
+                <i class="fa-solid fa-calculator"></i>
+                    chat en linea
+            </a>
+        </div>
     </div>
 </div>
