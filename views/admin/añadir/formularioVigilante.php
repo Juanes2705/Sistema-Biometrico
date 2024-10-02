@@ -50,15 +50,15 @@
     <legend class="formulario__legend">Información Extra</legend>
 
     <div class="formulario__campo">
-        <label for="tags_input" class="formulario__label">Experiencia (separadas por coma)</label>
+        <label for="tags_inputV" class="formulario__label">Experiencia (separadas por coma)</label>
         <input
             type="text"
             class="formulario__input"
-            id="tags_input"
+            id="tags_inputV"
             placeholder="Ej. Matematiscas, Ingles, Naturales, Sociales, Informatica, Español"
         >
 
-        <div id="tags" class="formulario__listado"></div>
-        <input type="hidden" name="tags" value="<?php echo $vigilante->tags ?? ''; ?>"> 
+        <div id="tagsV" class="formulario__listado"></div>
+        <input type="hidden" name="tagsV" value="<?php echo $vigilante->tags ?? ''; ?>"> 
     </div>
 </fieldset>

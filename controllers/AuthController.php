@@ -50,18 +50,21 @@ class AuthController {
                         $_SESSION['nombre'] = $usuario->nombre;
                         $_SESSION['apellido'] = $usuario->apellido;
                         $_SESSION['email'] = $usuario->email;
+                        $_SESSION['admin'] = $usuario->admin ?? null;
                         header('Location: /admin/dashboard'); // Redireccionar al dashboard de administradores
                     } elseif ($tipo_usuario === 'profe') {
                         $_SESSION['id'] = $profesor->id;
                         $_SESSION['nombre'] = $profesor->nombre;
                         $_SESSION['apellido'] = $profesor->apellido;
                         $_SESSION['email'] = $profesor->correo;
+                        $_SESSION['profe'] = $usuario->profe ?? null;
                         header('Location: /profe/dashboard'); // Redireccionar al dashboard de profesores
                     } elseif ($tipo_usuario === 'vigilante') {
                         $_SESSION['id'] = $vigilante->id;
                         $_SESSION['nombre'] = $vigilante->nombre;
                         $_SESSION['apellido'] = $vigilante->apellido;
                         $_SESSION['email'] = $vigilante->email;
+                        $_SESSION['vigilante'] = $usuario->vigilante ?? null;
                         header('Location: /vigilante/dashboard'); // Redireccionar al dashboard de vigilante
                     }
                 }

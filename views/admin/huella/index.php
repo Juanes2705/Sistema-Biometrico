@@ -17,7 +17,7 @@
         </div>
 
         <div class="dashboard__contenedor--boton">
-            <a class="dashboard__boton" href="/admin/huella/dinamica/index">
+            <a class="dashboard__boton" href="/admin/huella/chat/index">
                 <i class="fa-solid fa-calculator"></i>
                     chat en linea
             </a>

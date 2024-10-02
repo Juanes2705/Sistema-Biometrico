@@ -25,12 +25,12 @@ class VigilantesController {
     }
 
     public static function crearVigilantes(Router $router){
-        $alertas = [];
-        $vigilante = new Vigilantes;
         if(!is_admin()){
             header('Locacion: /login');
         }
         
+        $alertas = [];
+        $vigilante = new Vigilantes;
 
         if($_SERVER['REQUEST_METHOD']==='POST'){
             $vigilante-> sincronizar($_POST);

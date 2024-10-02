@@ -33,7 +33,6 @@
   <div id="resultMessage"></div>
 </div>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="http://localhost:3000/src/js/keypad.js"></script>
 </body>
 
 

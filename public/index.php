@@ -102,6 +102,9 @@ $router->get('/admin/huella/dinamica/index', [HuellasController::class, 'indexD'
 $router->post('/admin/huella/dinamica/index', [HuellasController::class, 'indexD']);
 $router->get('/admin/huella/dinamica/verificar_clave', [HuellasController::class, 'indexV']);
 $router->post('/admin/huella/dinamica/verificar_clave', [HuellasController::class, 'indexV']);
+$router->get('/admin/huella/chat/index', [HuellasController::class, 'indexC']);
+$router->post('/admin/huella/chat/index', [HuellasController::class, 'indexC']);
+
 
 
 $router->get('/admin/grados', [GradosController::class, 'index']);

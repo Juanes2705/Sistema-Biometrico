@@ -1,11 +1,11 @@
 (function() {
 
-    const tagsInput = document.querySelector('#grado_input')
+    const tagsInput = document.querySelector('#tags_inputV')
 
     if(tagsInput) {
 
-        const tagsDiv = document.querySelector('#grado');
-        const tagsInputHidden = document.querySelector('[name="grado"]');
+        const tagsDiv = document.querySelector('#tagsV');
+        const tagsInputHidden = document.querySelector('[name="tagsV"]');
 
         let tags = [];
 

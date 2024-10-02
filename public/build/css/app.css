@@ -66,7 +66,8 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -776,6 +777,9 @@ h3 {
   border-color: #3498db;
   box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
 }
+.dashboard__filter-input::-moz-placeholder {
+  color: #aaa;
+}
 .dashboard__filter-input::placeholder {
   color: #aaa;
 }
@@ -975,7 +979,9 @@ input.number-input {
   cursor: pointer;
   border-radius: 100%;
   transition: 250ms;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   box-shadow: 8px 8px 24px 0px rgba(132, 132, 132, 0.09);
 }
 .wrapper .phone .phone-container .keyboard .number span i.delete {
@@ -1027,5 +1033,39 @@ input.number-input {
   #resultMessage {
     font-size: 1.2em;
   }
+}
+#chat-container {
+  border: 1px solid #ccc;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+#chat-messages {
+  flex-grow: 1;
+  overflow-y: scroll;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+#chat-input {
+  display: flex;
+  border-top: 1px solid #ccc;
+}
+
+#chat-input input {
+  flex-grow: 1;
+  padding: 10px;
+  border: none;
+  border-right: 1px solid #ccc;
+}
+
+#chat-input button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 /*# sourceMappingURL=app.css.map */
