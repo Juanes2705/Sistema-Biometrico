@@ -1,0 +1,12 @@
+name: CI/CD Pipeline
+on: [push, pull_request]
+jobs:
+ build:
+ runs-on: ubuntu-latest
+ steps:
+ - name: Checkout
+ uses: actions/checkout@v2
+ - name: Test
+ run: echo "Ejecutando pruebas"
+ - name: Deploy
+ run: echo "Implementación en producción"
